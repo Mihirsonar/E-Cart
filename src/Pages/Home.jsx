@@ -1,9 +1,13 @@
 import React from 'react'
-
+import Carousel from '../Components/Carousel'
+import Products from '../Components/Products'
 function Home() {
   return (
-    <h1>Home Page</h1>
-  )
+    <>
+<Carousel/> 
+<Products/> 
+    </>
+)
 }
 
 export default Home
