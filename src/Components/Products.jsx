@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Add } from '../redux/Slice/CartSlice';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
+
 
   // Fetch products from the API when the component mounts
   useEffect(() => {
@@ -16,7 +19,11 @@ const ProductPage = () => {
 
   const Addtocart = (product) => {
     dispatch(Add(product));
+    toast("Product Added to Cart🎉🎉🎉");
+
   };
+
+
 
   return (
     <div className="container mx-auto px-3 py-3">
@@ -42,12 +49,15 @@ const ProductPage = () => {
                   onClick={() => Addtocart(product)} // Use an arrow function to call Addtocart when clicked
                 >
                   Add To Cart
+                  <ToastContainer/>
                 </button>
+         
               </div>
             </div>
           </div>
         ))}
       </div>
+
     </div>
   );
 };

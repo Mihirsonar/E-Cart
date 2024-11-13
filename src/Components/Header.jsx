@@ -20,12 +20,12 @@ function Header() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
-    { name: `Cart (${cartCount})`, path: '/cart' }  // Display cart count here
+    { name: `Cart ${cartCount > 0 ? ` (${cartCount})` : ''}`, path: '/cart' }  // Display cart count here
   ];
 
   return (
-    <div className="flex sticky text-black p-3 justify-between backdrop-blur-md border-neutral-700/80 top-0 z-50">
-      <h2 className="text-xl font-bold">Welcome</h2>
+    <div className="flex sticky text-black p-3 justify-between bg-slate-100 top-0 z-50">
+      <h2 className="text-xl font-bold p-2">Welcome</h2>
   
       {/* Navigation Links for Large Screens */}
       <div className="lg:flex text-xl gap-10 font-bold sm:hidden">

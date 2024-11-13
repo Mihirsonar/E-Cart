@@ -30,7 +30,7 @@ function Cart() {
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-16 h-16 rounded-md object-cover"
+                  className="w-18 h-16 rounded-md object-cover"
                 />
                 <div>
                   <h2 className="text-lg font-semibold">{item.name}</h2>
