@@ -2,7 +2,6 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Routing from './Routing'
 import { BrowserRouter } from "react-router-dom";
-import { CartProvider } from './Context/Cart_Context';
 import { store } from './redux/Store'
 import { Provider } from 'react-redux'
 
