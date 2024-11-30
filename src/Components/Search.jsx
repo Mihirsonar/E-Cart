@@ -1,41 +1,26 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setSearchQuery } from '../redux/Slice/ProductSlice';
 
 const SearchBar = () => {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [input, setInput] = useState('');
+  const dispatch = useDispatch();
 
-  const categories = ['Fruits & Vegetables', 'Dairy', 'Bakery', 'Snacks', 'Beverages', 'Meat'];
+  const handleChange = (value) => {
+    setInput(value);
+    dispatch(setSearchQuery(value)); // Update Redux state
+  };
 
   return (
-    <div className="flex items-center p-1 border rounded-full overflow-hidden  w-full max-w-md">
-      {/* Dropdown for Categories */}
-      <div
-        className="relative"
-        onMouseEnter={() => setDropdownOpen(true)}
-        onMouseLeave={() => setDropdownOpen(false)}
-      >
-        <button className="px-4 py-2 rounded-full bg-gray-300 font-bold">
-          ALL
-        </button>
-        {isDropdownOpen && (
-          <div className="absolute left-0 top-full mt-1 bg-white border rounded-lg shadow-lg w-48 z-10">
-            {categories.map((category) => (
-              <div key={category} className="px-4 py-2 hover:bg-gray-100">
-                {category}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* Search Input */}
+    <div className="flex items-center p-1 border rounded-full overflow-hidden w-full max-w-md">
       <input
         type="text"
         placeholder="Search products and brands across shops"
+        value={input}
+        onChange={(e) => handleChange(e.target.value)}
         className="flex-grow px-4 py-2 focus:outline-none"
       />
-
-      {/* Search Button */}
-      <button className="px-3 py-2 bg-purple-600 rounded-full text-white ">
+      <button className="px-3 py-2 bg-purple-600 rounded-full text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
