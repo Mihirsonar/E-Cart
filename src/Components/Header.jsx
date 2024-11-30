@@ -25,7 +25,7 @@ function Header() {
   ];
 
   return (
-    <div className="flex sticky text-black p-2 justify-between bg-white top-0 z-50">
+    <div className="flex sticky text-black p-2 justify-between container mx-auto bg-white top-0 z-50">
       <h2 className="text-2xl font-bold p-2 flex">Local<LiaCartPlusSolid className="mt-1 font-bold" />
       </h2>
       <SearchBar />
@@ -36,7 +36,7 @@ function Header() {
           <Link 
             key={index} 
             to={link.path}
-            className={`${location.pathname === link.path ? 'underline' : ''}`}
+            className={`${location.pathname === link.path ? 'text-purple-700' : ''}`}
           >
             {link.name}
           </Link>

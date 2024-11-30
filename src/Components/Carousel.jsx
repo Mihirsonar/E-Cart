@@ -30,7 +30,7 @@ function Carousel() {
 
   return (
     <>
-    <div id="default-carousel" className="relative w-[95%] mx-auto " data-carousel="slide">
+    <div id="default-carousel" className="relative w-[92%] mx-auto " data-carousel="slide">
       {/* Carousel wrapper */}
       <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
         {[1, 2, 3, 4, 5].map((_, index) => (
