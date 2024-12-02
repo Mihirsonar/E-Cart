@@ -16,7 +16,7 @@ function Cart() {
   };
 
   return (
-    <div className="min-h-screen p-4 bg-gray-100 flex flex-col items-center">
+    <div className="min-h-screen p-4 bg-white flex flex-col items-center">
       <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
 
       {cartItems && cartItems.length > 0 ? (
