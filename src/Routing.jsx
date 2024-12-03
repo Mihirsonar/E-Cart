@@ -6,6 +6,9 @@ import Contact from './Pages/Contact'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import Cart from './Pages/Cart'
+import LoginPage from './Pages/Login'
+import SignInPage from './Pages/Register'
+
 
 function Routing() {
     
@@ -17,6 +20,8 @@ function Routing() {
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/Cart' element={<Cart/>}/>
+        <Route path='/login' element={<LoginPage/>}/>
+        <Route path='/register' element={<SignInPage/>}/>
 
     </Routes>
     <Footer/>
